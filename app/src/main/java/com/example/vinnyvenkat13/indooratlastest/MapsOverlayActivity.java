@@ -1,5 +1,11 @@
 package com.example.vinnyvenkat13.indooratlastest;
 
+/**
+ * This overlays the floor plan using the IndoorAtlas API onto a map. Ths application finds the
+ * current location and overlays the floorplan onto the map if you're in th location of the
+ * floorplan.
+ */
+
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;

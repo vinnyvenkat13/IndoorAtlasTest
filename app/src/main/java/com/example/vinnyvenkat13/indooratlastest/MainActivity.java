@@ -1,5 +1,5 @@
 /**
- * TODO: THIS ENTIRE THING IS WRONG, USE THE MAINACTIVITY TO GET PERMISSIONS AND THEN RUN MAPSOVERLAYACTIVITY
+ * This just checks for permissions and then opens up the maps overlay activity.
  */
 
 package com.example.vinnyvenkat13.indooratlastest;
@@ -16,7 +16,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
-import android.location.*;
+//import android.location.*;
 
 public class MainActivity extends AppCompatActivity {
 
