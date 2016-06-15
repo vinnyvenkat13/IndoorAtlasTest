@@ -138,6 +138,8 @@ public class MapsOverlayActivity extends FragmentActivity {
         // instantiate IALocationManager and IAResourceManager
         mIALocationManager = IALocationManager.create(this);
         mResourceManager = IAResourceManager.create(this);
+
+        onResume();
     }
 
     @Override
