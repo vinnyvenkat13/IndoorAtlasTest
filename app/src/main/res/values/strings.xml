@@ -2,13 +2,13 @@
 <resources>
     <string name="app_name">IndoorAtlas SDK Examples</string>
     <string name="action_clear">Clear</string>
-    <string name="example_simple_title">01. Simple</string>
+    <string name="example_simple_title">Simple</string>
     <string name="example_simple_description">Demonstrates basic functionality, shows events as text entries.</string>
-    <string name="example_imageview_title">02. ImageView</string>
+    <string name="example_imageview_title">ImageView</string>
     <string name="example_imageview_description">Demonstrates showing locations on a floor plan displayed with ImageView.</string>
-    <string name="example_googlemaps_basic_title">03. Google Maps - Basic</string>
+    <string name="example_googlemaps_basic_title">Google Maps - Basic</string>
     <string name="example_googlemaps_basic_description">Demonstrates showing location on GoogleMap</string>
-    <string name="example_googlemaps_overlay_title">04. Google Maps - Overlay</string>
+    <string name="example_googlemaps_overlay_title">Google Maps - Overlay</string>
     <string name="example_googlemaps_overlay_description">Demonstrates showing location over a floor plan which is loaded as map overlay.</string>
     <string name="location_permission_request_title">Permission required</string>
     <string name="location_permission_request_rationale">Access to coarse location is required for faster first fix.</string>
