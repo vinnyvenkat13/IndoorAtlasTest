@@ -9,11 +9,12 @@ import java.util.ArrayList;
 
 public class NodeGraph {
 
-
+    ArrayList<Vertex> vertices;
 
     class Vertex {
         LatLng latLng;
         ArrayList<ListDist> edges;
+
 
         Vertex(double lat, double lng) {
             latLng = new LatLng(lat, lng);
@@ -22,12 +23,12 @@ public class NodeGraph {
 
         public void addEdge(Vertex edge) {
             double dist = findDist(latLng, edge.latLng);
-            ListDist toAdd = new ListDist(edge, dist);
+            ListDist toAdd = new ListDist(edge.latLng.latitude, edge.latLng.longitude, dist);
             if(edges.isEmpty()) {
                 edges.add(toAdd);
             }
             else {
-                int index = 1;
+                int index = 0;
                 boolean isFound = false;
                 while(!isFound || index >= edges.size()) {
                     if(dist >= edges.get(index).dist) {
@@ -40,7 +41,7 @@ public class NodeGraph {
             }
         }
 
-        private double findDist(LatLng latLng1, LatLng latLng2) {
+        public double findDist(LatLng latLng1, LatLng latLng2) {
             double lat1 = latLng1.latitude;
             double lat2 = latLng2.latitude;
             double lon1 = latLng1.longitude;
@@ -55,20 +56,49 @@ public class NodeGraph {
             dist = dist * 60 * 1.1515 * 1.609344;
             return dist;
         }
+
+        @Override
+        public boolean equals(Object o) {
+            if(o == null || (getClass() != o.getClass())) return false;
+            final Vertex check = (Vertex) o;
+            if(!latLng.equals(check.latLng)) return false;
+            for(int x = 0; x < edges.size(); x++) {
+                if(!edges.get(x).loc.equals(check.edges.get(x).loc) ||
+                        edges.get(x).dist != check.edges.get(x).dist) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
     class ListDist {
-        Vertex vert;
+        //Vertex vert;
+        LatLng loc;
         double dist;
 
-        ListDist(Vertex newVert, double newDist) {
-            vert = newVert;
+        ListDist(double lat, double lng, double newDist) {
+            loc = new LatLng(lat, lng);
             dist = newDist;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if(o == null || (getClass() != o.getClass())) return false;
+            final ListDist check = (ListDist) o;
+            if(!check.loc.equals(loc)) return false;
+            return true;
         }
     }
 
     NodeGraph() {
         //create nodes
+        vertices = new ArrayList<>();
+        //add nodes, add edges
+    }
+
+    public ArrayList<Vertex> getVertices() {
+        return vertices;
     }
 
 
